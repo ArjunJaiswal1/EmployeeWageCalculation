@@ -20,28 +20,31 @@ namespace EmployeeWageCalculation
             int totalWage = 0;
 
 
-            if (randomInput == Full_Time)
+            switch (randomInput)
             {
+               case Full_Time:
+
                 Console.WriteLine("FullTime Employee is Presemt");
                 empHrs = 8;
-                
-            }
-            else if (randomInput == Part_Time)
-            {
+                    break;
+
+                case Part_Time:
+              
                 Console.WriteLine("PartTime Employee is Presemt");
                 empHrs = 4;
+                    break;
 
-            }
-            else
-            {
+                 default:
+                
                 Console.WriteLine("Employee is Absent");
                 empHrs = 0;
+                    break;
               
             }
             totalWage = Emp_Rate_Per_Hr * empHrs;
             Console.WriteLine("Daily Wage is: " + totalWage);
             Console.ReadLine();
-            Console.ReadLine();
+           
         }
     }
 }

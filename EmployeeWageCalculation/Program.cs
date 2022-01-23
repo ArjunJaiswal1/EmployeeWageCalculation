@@ -10,19 +10,27 @@ namespace EmployeeWageCalculation
     {
         static void Main(string[] args)
         {
+            
+            const int Full_Time = 1;
+            const int Part_Time = 2;
+            const int Emp_Rate_Per_Hr = 20;
             Random random = new Random();
-            int FullTimeEmployee = 1;
-            int randomInput = random.Next(0, 2);
-            int empRatePerHr = 20;
+            int randomInput = random.Next(0, 3);
             int empHrs = 0;
             int totalWage = 0;
 
 
-            if (randomInput == FullTimeEmployee)
+            if (randomInput == Full_Time)
             {
-                Console.WriteLine("Employee is Presemt");
+                Console.WriteLine("FullTime Employee is Presemt");
                 empHrs = 8;
                 
+            }
+            else if (randomInput == Part_Time)
+            {
+                Console.WriteLine("PartTime Employee is Presemt");
+                empHrs = 4;
+
             }
             else
             {
@@ -30,7 +38,7 @@ namespace EmployeeWageCalculation
                 empHrs = 0;
               
             }
-            totalWage = empRatePerHr * empHrs;
+            totalWage = Emp_Rate_Per_Hr * empHrs;
             Console.WriteLine("Daily Wage is: " + totalWage);
             Console.ReadLine();
             Console.ReadLine();

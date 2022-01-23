@@ -15,12 +15,14 @@ namespace EmployeeWageCalculation
             const int Part_Time = 2;
             const int Emp_Rate_Per_Hr = 20;
             const int MAX_WORKING_DAYS = 20;
+            const int MAX_WORKING_HRS = 100;
             Random random = new Random();
             int dailyWage = 0;
             int empHrs = 0;
             int totalWage = 0;
+            int day = 1, workingHrs = 0;
 
-            for (int day = 1; day <= MAX_WORKING_DAYS; day++)
+            while (day<= MAX_WORKING_DAYS && workingHrs<= MAX_WORKING_HRS)
             {
 
                 int randomInput = random.Next(0, 3);
@@ -51,10 +53,12 @@ namespace EmployeeWageCalculation
                 Console.WriteLine("Daily Wage for day {0} is: {1}",day,dailyWage);
                 //totalWage = totalWage + dailyWage;
                 totalWage += dailyWage;
+                day++;
+                workingHrs = workingHrs + empHrs;   
 
             }
             Console.WriteLine();
-            Console.WriteLine("Total Wage for {0} Days is:{1}", MAX_WORKING_DAYS, totalWage);
+            Console.WriteLine("Total Wage for {0} Days is:{1} and Hrs is:{2}", day, totalWage, workingHrs);
             Console.ReadLine();
         }
     }
